@@ -62,11 +62,7 @@ export default function MainPage() {
   const handleToggleTask =(id, type)=>{
     const tempList=(type==='do' ? [...toDoList] : [...toDontList] );
     const toggleTask = tempList.find(ele => ele.id === id);
-    console.log(toggleTask);
-    toggleTask.complete = !toggleTask.complete;
-    console.log(toggleTask);
-
-    
+    toggleTask.complete = !toggleTask.complete;    
     if(type==='do') setToDoList(tempList);
     else setToDontList(tempList);
   }
@@ -84,7 +80,6 @@ export default function MainPage() {
   }
 
   useEffect(() => {
-    console.log(localStorage.getItem(LOCAL_STORAGE_KEY_1));
     const toDoVal = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_1));
     const toDontVal = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_2));
 
@@ -93,7 +88,6 @@ export default function MainPage() {
   }, []);
 
   useEffect(() => {
-    console.log("1 changed");
     localStorage.setItem(LOCAL_STORAGE_KEY_1, JSON.stringify(toDoList));
   }, [toDoList]);
   useEffect(() => {
@@ -102,7 +96,7 @@ export default function MainPage() {
   return (
     <>
       <ToasterBoilerPlate />
-      <div className="w-[100vw] h-[100vh] flex gap-2 p-5">
+      <div className="w-[100vw] h-[100vh] flex gap-2 p-5 text-white">
         <div className="w-[50%] h-[100%] flex flex-col items-center gap-2 p-3 bg-zinc-900 rounded border-solid border-2 border-zinc-800">
           <div
             className={`${satisfy.className} text-4xl bg-gradient-to-r from-in from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent `}
@@ -121,7 +115,7 @@ export default function MainPage() {
               type="text"
               ref={toDoRef}
               id="toDo"
-              className="w-[80%] text-black"
+              className="w-[80%] text-black bg-white"
             />
             <button onClick={handleAddToDo}>
               <AiOutlinePlus />
@@ -148,7 +142,7 @@ export default function MainPage() {
               type="text"
               ref={toDontRef}
               id="toDont"
-              className="w-[80%]  text-black"
+              className="w-[80%]  text-black bg-white"
             />
             <button onClick={handleAddToDont}>
               <AiOutlinePlus />

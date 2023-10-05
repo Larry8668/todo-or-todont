@@ -12,7 +12,7 @@ const HomePage = () =>{
 
     return(
         <>
-            <div className="w-[100vw] h-[100vh] flex flex-col items-center justify-center gap-5">
+            <div className="w-[100vw] h-[100vh] flex flex-col items-center justify-center gap-5 bg-black text-white">
                 <div className={`${satisfy.className} text-8xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent `}>Hello There...</div>
                 <div className="text-3xl">This will be you to-Do and to-Don't list</div>
                 <div>For the times we needed that reminder of the things we shdn't do</div>

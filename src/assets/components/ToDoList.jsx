@@ -17,8 +17,7 @@ export default function ToDoList({List, toggleFunc}) {
                 </div>
               ))
             ) : (
-              <div className="w-[100%] h-[100%] flex item-center justify-center">
-                {" "}
+              <div className="w-[100%] h-[100%] flex items-center justify-center">
                 Nothing to show
               </div>
             )}
