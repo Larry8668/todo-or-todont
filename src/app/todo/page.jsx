@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { v4 as uuidv4 } from "uuid";
 import { AiOutlinePlus } from "react-icons/ai";
+import {FaTrashAlt} from "react-icons/fa";
 import { Satisfy } from "next/font/google";
 
 import ToasterBoilerPlate from "@/assets/components/ToasterBoilerPlate";
@@ -69,6 +70,18 @@ export default function MainPage() {
     if(type==='do') setToDoList(tempList);
     else setToDontList(tempList);
   }
+  const handleClearCompletedDo = () =>{
+    const tempList = toDoList.filter(ele =>{
+        return ele.complete != true
+    })
+    setToDoList(tempList);
+  }
+  const handleClearCompletedDont = () =>{
+    const tempList = toDontList.filter(ele =>{
+        return ele.complete != true
+    })
+    setToDontList(tempList);
+  }
 
   useEffect(() => {
     console.log(localStorage.getItem(LOCAL_STORAGE_KEY_1));
@@ -96,8 +109,9 @@ export default function MainPage() {
           >
             To Do
           </div>
-          <div className="w-[100%] bg-black border-solid border-2 border-zinc-800 p-2 rounded">
-            Tasks left to do <span>{toDoList.length}</span>
+          <div className="w-[100%] bg-black border-solid border-2 border-zinc-800 p-2 rounded flex justify-between">
+            <div>Tasks left to do <span>{toDoList.length}</span></div>
+            <button onClick={handleClearCompletedDo}><FaTrashAlt /></button>            
           </div>
           <div className="w-[100%] bg-black border-solid border-2 border-zinc-800 p-2 rounded flex justify-around">
             <label htmlFor="toDo" className={`${satisfy.className} text-2xl`}>
@@ -121,8 +135,10 @@ export default function MainPage() {
           >
             To Don't
           </div>
-          <div className="w-[100%] bg-black border-solid border-2 border-zinc-800 p-2 rounded">
-            Tasks left not to do <span>{toDontList.length}</span>
+          <div className="w-[100%] bg-black border-solid border-2 border-zinc-800 p-2 rounded  flex justify-between">
+            <div>Tasks left not to do <span>{toDontList.length}</span></div>
+            <button onClick={handleClearCompletedDont}><FaTrashAlt /></button>            
+
           </div>
           <div className="w-[100%] bg-black border-solid border-2 border-zinc-800 p-2 rounded flex justify-around">
             <label htmlFor="toDont" className={`${satisfy.className} text-2xl`}>
