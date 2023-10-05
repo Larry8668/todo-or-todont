@@ -59,7 +59,7 @@ export default function MainPage() {
     toDontRef.current.value = null;
   };
   const handleToggleTask =(id, type)=>{
-    const tempList=(type==='do' ? toDoList : toDontList );
+    const tempList=(type==='do' ? [...toDoList] : [...toDontList] );
     const toggleTask = tempList.find(ele => ele.id === id);
     console.log(toggleTask);
     toggleTask.complete = !toggleTask.complete;

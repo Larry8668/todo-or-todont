@@ -34,7 +34,7 @@ export default function SignUp() {
     <>
       <ToasterBoilerPlate/>
       <div className="w-[100vw] h-[100vh] flex items-center justify-center">
-        <div className="flex flex-col gap-5 items-center  p-10 rounded bg-slate-500">
+        <div className="flex flex-col gap-5 items-center  p-10 rounded bg-zinc-800">
           <div className={`${satisfy.className} text-4xl` }>Sign Up</div>
           <div className="flex flex-col ">
             <label htmlFor="username">Username :</label>
