@@ -11,7 +11,7 @@ export default function ToDoList({List, toggleFunc}) {
                   className="w-[100%] p-2 flex gap-7 text-white "
                 >
                   <input type="checkbox" checked={ele.complete} id={ele.id} onChange={()=>toggleFunc(ele.id, ele.type)} />
-                  <label htmlFor={ele.id}>{ele.task}</label>
+                  <label htmlFor={ele.id} className={ele.complete ? 'line-through' : 'no-underline'}> {ele.task} </label>
                 </div>
                 <hr />
                 </div>

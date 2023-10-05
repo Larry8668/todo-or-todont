@@ -20,6 +20,11 @@ const HomePage = () =>{
                     <Link href="\signup" className="underline">Sign Up</Link>
                     <span> to get started</span>
                 </div>
+                <div>
+                    <span>Start editing you </span>
+                    <Link href='\todo' className="undeline">To-Do & To-Dont</Link>
+                    <span> List</span>
+                </div>
             </div>
         </>
     )

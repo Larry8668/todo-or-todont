@@ -105,7 +105,7 @@ export default function MainPage() {
           </div>
           <div className="w-[100%] bg-black border-solid border-2 border-zinc-800 p-2 rounded flex justify-between">
             <div>Tasks left to do <span>{toDoList.length}</span></div>
-            <button onClick={handleClearCompletedDo}><FaTrashAlt /></button>            
+            <button onClick={handleClearCompletedDo}  title="Delete all completed tasks"><FaTrashAlt /></button>            
           </div>
           <div className="w-[100%] bg-black border-solid border-2 border-zinc-800 p-2 rounded flex justify-around">
             <label htmlFor="toDo" className={`${satisfy.className} text-2xl`}>
@@ -115,7 +115,7 @@ export default function MainPage() {
               type="text"
               ref={toDoRef}
               id="toDo"
-              className="w-[80%] text-black bg-white"
+              className="w-[80%] text-black bg-white  p-2"
             />
             <button onClick={handleAddToDo}>
               <AiOutlinePlus />
@@ -131,7 +131,7 @@ export default function MainPage() {
           </div>
           <div className="w-[100%] bg-black border-solid border-2 border-zinc-800 p-2 rounded  flex justify-between">
             <div>Tasks left not to do <span>{toDontList.length}</span></div>
-            <button onClick={handleClearCompletedDont}><FaTrashAlt /></button>            
+            <button onClick={handleClearCompletedDont} title="Delete all completed tasks"><FaTrashAlt /></button>            
 
           </div>
           <div className="w-[100%] bg-black border-solid border-2 border-zinc-800 p-2 rounded flex justify-around">
@@ -142,7 +142,7 @@ export default function MainPage() {
               type="text"
               ref={toDontRef}
               id="toDont"
-              className="w-[80%]  text-black bg-white"
+              className="w-[80%]  text-black bg-white p-2"
             />
             <button onClick={handleAddToDont}>
               <AiOutlinePlus />
