@@ -1,6 +1,7 @@
 "use client"
 import React, {useRef} from 'react'
 import toast, {Toaster} from 'react-hot-toast';
+import ToasterBoilerPlate from '@/assets/components/ToasterBoilerPlate';
 import Link from 'next/link';
 import { Satisfy } from "next/font/google";
 
@@ -24,38 +25,7 @@ export default function LogIn() {
   
     return (
       <>
-        <Toaster
-          position="bottom-center"
-          reverseOrder={false}
-          gutter={8}
-          containerClassName=""
-          containerStyle={{}}
-          toastOptions={{
-            // Define default options
-            className: "",
-            duration: 5000,
-            style: {
-              background: "#363636",
-              color: "#fff",
-            },
-  
-            // Default options for specific types
-            success: {
-              duration: 3000,
-              theme: {
-                primary: "green",
-                secondary: "black",
-              },
-            },
-            error: {
-              duration: 3000,
-              there: {
-                primary: "red",
-                secondary: "black",
-              },
-            },
-          }}
-        />
+        <ToasterBoilerPlate/>
         <div className="w-[100vw] h-[100vh] flex items-center justify-center">
           <div className="flex flex-col gap-5 items-center  p-10 rounded bg-slate-500">
             <div className={`${satisfy.className} text-4xl`}>Log In</div>
